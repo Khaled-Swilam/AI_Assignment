@@ -37,8 +37,8 @@ def main():
     if args.step == "model" or args.step == "all":
         print("\n--- Starting Model Training ---")
         token_file = os.getenv("TRAIN_TOKENS")
-        model_path = os.getenv("MODEL_SAVE_PATH")
-        n_value = int(os.getenv("NGRAM_N", 3))
+        model_path = os.getenv("MODEL")
+        n_value = int(os.getenv("NGRAM_ORDER", 4))
 
         if not os.path.exists(token_file):
             print(f"Error: Run --step dataprep first.")
